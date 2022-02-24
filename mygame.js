@@ -40,12 +40,11 @@ let computerScore = 0;
 const human = document.querySelector('#player1');
 const comp = document.querySelector('#player2');
 const winner = document.querySelector('.winner');
+
+//checks the winner
 function checkWinner(humanScore, computerScore){
-    if (humanScore > computerScore)
-    {
-        return "human";
-    }
-    else{return "computer";}
+    if (humanScore == 5){ return "human";}
+    else if(computerScore == 5) {return "computer";}
 }
 const buttons = document.querySelectorAll('button');
 buttons.forEach((button) =>{
@@ -63,7 +62,7 @@ buttons.forEach((button) =>{
         //reset score
         const sum = humanScore + computerScore;
        //console.log(sum);
-       if(sum == 5)
+       if((humanScore == 5) || (computerScore == 5))
        {
            winner.textContent = (checkWinner(humanScore, computerScore) + 
            " is the winner");
@@ -73,7 +72,6 @@ buttons.forEach((button) =>{
            human.textContent = humanScore;
        }
 
-   
         
     });
 });
