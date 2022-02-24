@@ -2,19 +2,38 @@
 
 <html>
     <head>
-        <title>This is a game</title>
+        <title>Rock-Paper-Scissors Game</title>
         <meta charset = "UTF-8">
-        <link rel ="stylesheet" href = "styles.css">
-        <script scr ="mygame.js"></script>
+        <link rel ="stylesheet" href ="styles.css">
+        <script src ="mygame.js" defer></script>
     </head>
 
     <body>
-        <div class = "headerbox">
-            <div class = "header">My Game</div>
-        </div>
+        <div class = "page-wrapper">
 
-        <div class = "gamebox"> This is a test
-            
+            <header id = "header">
+                <h2>Rock Paper Scissors Game</h2>
+                <h3>Best of 5</h3>
+            </header>
+
+            <div class = "box-container">
+                <button id ="rock">Rock</button>
+                <button id ="paper">Paper</button>
+                <button id ="scissor">Scissor</button>
+               
+            </div>
+
+
+            <div class = "gamebox"> 
+                <h2>Player 1 Score: <span id = "player1" value = '0'>0</span></h2>
+                <h2>Player 2 Score: <span id = "player2" value = '0'>0</span></h2>
+            </div>
+
+            <h3 class = "winner"></h3>
+
+        
         </div>
+      
+
     </body>
 </html>
