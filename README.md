@@ -1,4 +1,5 @@
-# rock-and-paper-and-scissor
+# rock-and-paper-and-scissor 
+Live link: https://xsymmetry9.github.io/rock-and-paper-and-scissor/
 
 This is a project from Odin Project
 
@@ -6,7 +7,7 @@ This is a project from Odin Project
 
 To practice getting comfortable with Flex boxes and writing functions on JS
 
-### My first Rock Paper Scissors Game
+## My History
 
 ![My first post](./history/RockPaperScissorsGame.png)
 
