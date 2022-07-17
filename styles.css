@@ -4,6 +4,7 @@ body {
   background-color: black;
   margin: 0px;
   padding: 0px;
+  font-family: 'Roboto', sans-serif;
 }
 
 h2, h1, p {
@@ -12,12 +13,10 @@ h2, h1, p {
 
 h1 {
   font-size: 50px;
-  font-family: 'Shizuru', cursive;
   font-weight: bolder;
 }
 
 h2 {
-  font-family: 'Shizuru', cursive;
   font-size: 30px;
   font-weight: bold;
 }
@@ -32,14 +31,20 @@ h2 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
 }
 
-#title {
+.title-box{
   border: 10px solid #950740;
   border-radius: 15px;
   margin-top: 15px;
   padding: 10px;
+  width: 500px;
   text-align: center;
+
+}
+#title {
+
 }
 
 .box-container {

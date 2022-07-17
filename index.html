@@ -7,30 +7,33 @@
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
   <script src="mygame.js" defer></script>
+
+<!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div class="game-container">
     <div class="game">
-      <div id="title">
+      <div class ="title-box" id="title">
         <h2>Let's Play a Game</h2>
       </div>
 
       <div class="box-container">
         <div class=image-container>
-          <button class="buttons" id="rock"></button>
+          <button class="buttons" id="rock" value="rock"></button>
         </div>
 
         <div class=image-container>
-          <button class="buttons" id="paper"></button>
+          <button class="buttons" id="paper" value="paper"></button>
         </div>
 
         <div class="image-container">
-          <button class="buttons" id="scissor"></button>
+          <button class="buttons" id="scissor" value="scissors"></button>
 
         </div>
-
-
 
       </div>
 
@@ -48,8 +51,13 @@
       </div>
 
       <div class="message-container">
+        <h2 class="message">Round 1</h2>
+      </div>
+
+      <div class="message-container">
         <h2 class="winner">And the winner is...</h2>
       </div>
+
 
     </div>
     <div class="footer">
