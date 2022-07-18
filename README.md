@@ -15,7 +15,7 @@ This is a project from Odin Project
 
 ![My  second push](./history/rockpaperscissorsgame-v2.png)
 
-![My Third push](history\rockpaperscissorsgame-v3.png)
+![My Third push](./history/rockpaperscissorsgame-v3.png)
 
 The tip given by ODIN PROJECT is 
 
