@@ -20,52 +20,62 @@
       <div class ="title-box" id="title">
         <h2>Let's Play a Game</h2>
       </div>
-
-      <div class="box-container">
-        <div class=image-container>
-          <button class="buttons" id="rock" value="rock"></button>
-        </div>
-
-        <div class=image-container>
-          <button class="buttons" id="paper" value="paper"></button>
-        </div>
-
-        <div class="image-container">
-          <button class="buttons" id="scissor" value="scissors"></button>
-
-        </div>
-
-      </div>
-
-
-      <div class="gamebox">
-        <div class="player-1">
+      <!-- Replace title box to score box Code -->
+      <div class="scoreBoard" id="scoreBoard">
+        <div class="score-container">
           <h2 class="player-title">Player 1</h2>
           <h1 class="score" id="player1" value="0">0</h1>
         </div>
-        <div class="player-2">
+        <div class="score-container">
+          <h2 class="round">Round</h2>
+          <h1 class ="roundNumber" id="roundNumber">0</h1>
+        </div>
+        <div class="score-container">
           <h2 class="player-title">Player 2</h2>
           <h1 class="score" id="player2" value="0">0</h1>
         </div>
 
       </div>
 
+      <!-- Game Button Code -->
+
+      <div class="box-container">
+        <div class=image-container>
+          <button class="buttons" id="rock" value="rock" disabled></button>
+        </div>
+
+        <div class=image-container>
+          <button class="buttons" id="paper" value="paper"disabled></button>
+        </div>
+
+        <div class="image-container">
+          <button class="buttons" id="scissor" value="scissors" disabled></button>
+
+        </div>
+
+      </div>
+
+
+ <!-- Message Box Code -->
+
       <div class="message-container">
-        <h2 class="message">Round 1</h2>
+        <h2 class="message">Are you ready?</h2>
       </div>
 
       <div class="message-container">
         <h2 class="winner">And the winner is...</h2>
+        <button class ="resetButton" id="reset"></button>
+        <button class ="startButton" id ="start">Press Start</button>
       </div>
 
 
     </div>
-    <div class="footer">
-      <p>Copyright @ xsymmetry || Icons created by
-        <a class="attribute" href="https://www.flaticon.com/free-icons/" title="icons">Vitaly Gorbachev
-        </a>on <a class="attribute" href="flaticon.com">Flaticon</a>
-      </p>
-    </div>
+      <div class="footer">
+        <p>Copyright @ xsymmetry || Icons created by
+          <a class="attribute" href="https://www.flaticon.com/free-icons/" title="icons">Vitaly Gorbachev
+          </a>on <a class="attribute" href="flaticon.com">Flaticon</a>
+        </p>
+      </div>
 
 
   </div>
