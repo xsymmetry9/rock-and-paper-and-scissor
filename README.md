@@ -13,7 +13,7 @@ To practice getting comfortable with Flex boxes and writing functions on JS
 
 ![My  second push](./history/rockpaperscissorsgame-v2.png)
 
-![My Third push]
+![My Third push](history\rockpaperscissorsgame-v3.png)
 
 Goal: Practice toggling the element via display= none and display =block/flex
 
@@ -23,6 +23,7 @@ Goal: Practice toggling the element via display= none and display =block/flex
 3. Added a start button which changes the "title-box" display property to "none" and changes "scoreBoard" diplay to flex.
 4. Added more button properties - when hovering the button, it expands a scale of 1.1 larger and changes the opacity to .1 less.
 5. Added a replay button.  
+6. Added another variable called "round"
 
 
 The tip given by ODIN PROJECT is 
