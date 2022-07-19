@@ -1,4 +1,3 @@
-const winningPattern = [[1,3],[2,1],[3,2]];
 const human = document.querySelector('#player1');
 const comp = document.querySelector('#player2');
 const winner = document.querySelector('.winner');
@@ -6,19 +5,21 @@ const message = document.querySelector('.message');
 const roundNumber = document.querySelector('#roundNumber');
 const replayButton = document.querySelector('#reset');
 const startButton = document.querySelector('#start');
+const buttons = document.querySelectorAll('.buttons');
+const scoreBoard = document.querySelector(".scoreBoard");
+const titleBox = document.querySelector('#title');
 let round = 0;
 let humanScore = 0;
 let computerScore = 0;
 let isThereWinner = false;
 
+
+// --------------------------Functions----------------------------
 //Generate a random number from 1 - 3
-function randomNumber(){
-    const num = Math.floor(1 + Math.random()*3);
-    return num; 
-}
+const randomNumber = num => Math.floor(1 + Math.random()*3);
 
 //Finds the winner of the round
-function getWinner(playerSelection, computerSelection){
+const getWinner = (playerSelection, computerSelection)=>{
     const player = playerSelection;
     const computer = computerSelection;
     round+=1; //Adds one every time this code runs
@@ -33,7 +34,7 @@ function getWinner(playerSelection, computerSelection){
     }
 }
     //Creates a function that takes an arg and converts it to int
-function translator(playerSelection){
+const translator = (playerSelection)=>{
     let num;
     switch(playerSelection){
         case "rock":
@@ -48,9 +49,9 @@ function translator(playerSelection){
     return num;
 }
 
-function getNum(num)
+const getNum = num => 
 {
-    var checked = [0,1,2,3,4,5];
+    const checked = [0,1,2,3,4,5];
     checked.forEach(function(i){
         if (num == i){
             return i;
@@ -62,7 +63,7 @@ function getNum(num)
 
 }
 
-function getMessage(isWinner){
+const getMessage = isWinner =>{
     switch(isWinner){
         case "player":
             return ("Player wins!");
@@ -78,7 +79,7 @@ function getMessage(isWinner){
      }
 }
 
-function getScore(isWinner){
+const getScore = isWinner =>{
     switch(isWinner){
         case "player":
             humanScore += 1;
@@ -92,8 +93,7 @@ function getScore(isWinner){
             return("Error, contact the dev!!!");
      }
 }
-//checks the winner
-function checkWinner(){
+const checkWinner = () => {
     if (humanScore == 5 || computerScore == 5){ 
         return true;
     }
@@ -101,62 +101,14 @@ function checkWinner(){
         return false;
     }
 }
-function update()
+const update = () =>
 {
     human.textContent = humanScore; //updates Human score
     comp.textContent = computerScore; // Updates Computer score
     roundNumber.textContent = round;
-
 }
 
-
-const buttons = document.querySelectorAll('.buttons');
-buttons.forEach((button) =>{
-    button.addEventListener('click', function (e){
-//If player has 5 points, game ends
-//Gives the player to choose an option
-        if(humanScore == 5 || computerScore == 5){
-            alert("Please press replay to play again");
-       
-        }
-        else{
-            message.style.display ="block";
-
-            const player = translator(button.value); //returns an int (1-3)
-
-            let game = getWinner(player, randomNumber()); //returns the winner
-            getScore(game); //adds a point to a winner
-            update(); //updates player, computer, and round
-            message.textContent = getMessage(game); //Post message on HTML
-
-            if(checkWinner() != false){ //If there is a winner, check who is the winner
-
-                if(humanScore == 5){
-                    message.textContent = "Human dominate the world!"
-                    winner.style.display ="none";
-                    replayButton.style.display ="block";
-    
-                }
-                else{
-                    message.textContent = "Computers dominate the world. Rescue the humans!!!"
-                    winner.style.display="none";
-                    replayButton.style.display ="block";
-                }
-
-            } //Else, hit it one more time
-           
-            else{
-                console.log(getMessage(game));
-             console.log("Hit it!")   
-            }
-        }
-
-    });
-});
-
-replayButton.addEventListener('click', replay);
-
-function replay(){
+const replay = () => {
     round = 0;
     humanScore = 0;
     computerScore = 0;
@@ -166,10 +118,8 @@ function replay(){
     winner.style.display="block";
 
 }
-const scoreBoard = document.querySelector(".scoreBoard");
-const titleBox = document.querySelector('#title');
 
-function start(){
+const start = () =>{
     titleBox.style.display ="none";
     scoreBoard.style.display="flex";
 
@@ -180,7 +130,51 @@ function start(){
     winner.style.display = "block";
 
 }
-//Start Button Section
+
+
+// ----------------addEventListener Section--------------------
+buttons.forEach((button) =>{
+    button.addEventListener('click', (e) =>{
+//If player has 5 points, game ends
+//Gives the player to choose an option
+        if(humanScore == 5 || computerScore == 5){
+            alert("Please press replay to play again");
+        }
+        else{
+            message.style.display ="block";
+
+            let player = translator(button.value); //returns an int (1-3)
+
+            let game = getWinner(player, randomNumber()); //returns the winner
+            getScore(game); //adds a point to a winner
+            update(); //updates player, computer, and round
+            message.textContent = getMessage(game); //Post message on HTML
+
+            if(checkWinner() != false){ //If there is a winner, check who is the winner
+
+                if(humanScore == 5){ //Post the following on HTML file
+                    message.textContent = "Human dominate the world!"
+                    winner.style.display ="none";
+                    replayButton.style.display ="block";
+    
+                }
+                else{ //Post Computer dominates the world
+                    message.textContent = "Computers dominate the world. Rescue the humans!!!"
+                    winner.style.display="none";
+                    replayButton.style.display ="block";
+                }
+
+            } //Else, hit it one more time
+            else{
+                console.log(getMessage(game));
+                console.log("Hit me again!")    
+            }
+        }
+
+    });
+});
+
+replayButton.addEventListener('click', replay);
 startButton.addEventListener('click', start);
 
 
